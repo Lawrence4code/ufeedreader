@@ -22,7 +22,7 @@ $(function() {
          * page?
          ***1 failure spec - "RSS Feeds are defined" in case the array is empty***
          */
-        it('are defined', function() {
+        it('-are defined', function() {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
         });
@@ -32,7 +32,7 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
-        it("URL not empty/has valid URL", function(){
+        it("-URL not empty/has valid URL", function(){
             for(let i in allFeeds){
                 expect(allFeeds[i].url).toBeDefined();
                 expect(allFeeds[i].url.length).not.toBe(0);
@@ -44,7 +44,7 @@ $(function() {
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
-        it("feed has name", function(){
+        it("-feed has name", function(){
             for(let i in allFeeds){
                 expect(allFeeds[i].name).toBeDefined();
                 expect(allFeeds[i].name).not.toBe("");
@@ -55,19 +55,34 @@ $(function() {
 
 
     /* TODO: Write a new test suite named "The menu" */
+    describe("The Menu", function(){
 
         /* TODO: Write a test that ensures the menu element is
          * hidden by default. You'll have to analyze the HTML and
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
+         // reference: https://jasmine.github.io/2.0/introduction.html
+
+        it("By default Menu element is hidden", function(){
+            expect(document.body.className).toContain("menu-hidden");
+        });
 
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
+        it("Toggle function on Menu Icon", function (){
+            let menuIcon = document.querySelector(".menu-icon-link");
+            menuIcon.click();
+            expect(document.body.className).not.toContain("menu-hidden");
 
+            menuIcon.click();
+            expect(document.body.className).toContain("menu-hidden");
+        });
+        
+    });
     /* TODO: Write a new test suite named "Initial Entries" */
 
         /* TODO: Write a test that ensures when the loadFeed
