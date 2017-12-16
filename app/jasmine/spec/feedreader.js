@@ -126,7 +126,7 @@ $(function() {
       loadFeed(0);
     });
 
-    it('Feed content changes', function() {
+    it('Feed content display and changes', function() {
       expect(feedListFirst).toBeDefined();
       feedListSecond = $('.feed').html();
       expect(feedListSecond).toBeDefined();
