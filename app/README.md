@@ -44,5 +44,40 @@ Review the Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/pr
 17. No test should be dependent on the results of another.
 18. Callbacks should be used to ensure that feeds are loaded before they are tested.
 19. Implement error handling for undefined variables and out-of-bound array access.
-20. When complete - all of your tests should pass. 
+20. When complete - all of your tests should pass.
 21. Write a README file detailing all steps required to successfully run the application. If you have added additional tests (for Udacious Test Coverage),  provide documentation for what these future features are and what the tests are checking for.
+
+
+#Udacity Feed Reader Testing Project
+***
+
+##**This project is created to test the feed reader using framework called Jasmine which is build upon Javascript.**
+
+
+**Instructions:**
+Simply open the HTML in your browser and check the success and failure of the specs created.
+
+Put in the link for the live site/project.
+
+Tests
+
+RSS Feeds
+    * RSS Feeds are defined
+    * URL not empty/has valid URL
+    * RSS Feeds has name
+
+The Menu
+    * By default Menu element is hidden
+    * Toggle function on Menu Icon
+
+Initial Entries
+    * Feed container has atleast one entry
+
+New Feed Selection
+    * Feed content display and changes
+
+Reference/Resource:
+https://in.udacity.com/
+https://jasmine.github.io
+https://jquery.com/
+https://gulpjs.com/

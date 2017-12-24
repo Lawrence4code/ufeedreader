@@ -65,7 +65,8 @@ $(function() {
     // reference: https://jasmine.github.io/2.0/introduction.html
 
     it("By default Menu element is hidden", function() {
-      expect(document.body.className).toContain("menu-hidden");
+      // expect(document.body.className).toContain("menu-hidden"); // changed as per recommendation using Jquery
+      expect($("body").hasClass("menu-hidden")).toBe(true);
     });
 
     /* TODO: Write a test that ensures the menu changes
@@ -76,10 +77,12 @@ $(function() {
     it("Toggle function on Menu Icon", function() {
       let menuIcon = document.querySelector(".menu-icon-link");
       menuIcon.click();
-      expect(document.body.className).not.toContain("menu-hidden");
+      // expect(document.body.className).not.toContain("menu-hidden"); // changed as per recommendation using Jquery
+      expect($("body").hasClass("menu-hidden")).not.toBe(true);
 
       menuIcon.click();
-      expect(document.body.className).toContain("menu-hidden");
+      // expect(document.body.className).toContain("menu-hidden"); // // changed as per recommendation using Jquery
+      expect($("body").hasClass("menu-hidden")).toBe(true);
     });
 
   });
@@ -99,8 +102,8 @@ $(function() {
     });
 
     it("Feed container has atleast one entry", function() {
-      var entryNumber = $(".entry").length;
-      expect(entryNumber).toBeGreaterThan(0);
+      // var entryNumber = $(".entry").length; changed as per recommendation using Jquery and parent and child node 
+      expect($(".feed .entry").length).toBeGreaterThan(0);
     });
   });
 
